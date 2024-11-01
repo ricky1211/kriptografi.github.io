@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Diri</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            overflow: hidden; /* Menghindari scrollbar */
+        }
+        .video-background {
+            position: fixed; /* Memastikan video berada di belakang konten */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Mengatur video agar menutupi seluruh area */
+            z-index: -1; /* Memastikan video berada di belakang konten */
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.8); /* Memberikan transparansi pada latar belakang kontainer */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            animation: fadeIn 10s ease-in-out; /* Menambahkan animasi pada h1 */
+        }
+        p {
+            font-size: 18px;
+            text-align: justify; /* Menjadikan teks justified */
+            animation: slideIn 1s ease forwards; /* Menambahkan animasi pada paragraf */
+            opacity: 0; /* Memulai dengan opacity 0 untuk animasi */
+        }
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 75px; /* Membuat foto bulat */
+            margin-bottom: 20px;
+        }
+
+        /* Definisi animasi */
+        @keyframes fadeIn {
+            from {
+                opacity: -30;
+            }
+            to {
+                opacity: 10;
+            }
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: -30;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 10;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <video class="video-background" autoplay loop muted>
+        <source src="video/Sheng2.mp4" type="video/mp4"> <!-- Ganti dengan path video Anda -->
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="container">
+        <img src="c:/Users/Rickyy/Pictures/Saved Pictures/riki.jpg" alt="Foto Diri"> <!-- Ganti dengan path foto Anda -->
+        <h1>Yoo Whatsapp</h1>
+        <p><strong>Nama:</strong> Ricky Alfian Saputra</p>
+        <p><strong>Umur:</strong> 20 Tahun</p>
+        <p><strong>Email:</strong> rickyalfian751@gmail.com</p>
+        <p><strong>Alamat:</strong> Planet Bekasi</p>
+        <p><strong>Hobi:</strong> Futsal, Bermain game online</p>
+    </div>
+
+    <script>
+        // Menambahkan animasi pada paragraf
+        const paragraphs = document.querySelectorAll('.container p');
+        paragraphs.forEach((p, index) => {
+            p.style.animationDelay = `${index * 0.5}s`; // Menambahkan delay untuk setiap paragraf
+            p.style.animation = 'slideIn 1s ease forwards'; // Memulai animasi
+            p.style.opacity = 1; // Mengubah opacity menjadi 1
+        });
+    </script>
+
+</body>
+</html>
